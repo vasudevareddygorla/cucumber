@@ -22,17 +22,15 @@ public class Hooks {
 
     @Before
     public void initializingBrowser(){
-            System.setProperty("webdriver.chrome.driver", "/home/spurge/Downloads/chromedriver_linux64/chromedriver");
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
-            options.addArguments("start-maximized"); // open Browser in maximized mode
-            options.addArguments("disable-infobars"); // disabling infobars
-            options.addArguments("--disable-extensions"); // disabling extensions
-            options.addArguments("--disable-gpu"); // applicable to windows os only
-            options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-            options.addArguments("--no-sandbox"); // Bypass OS security model
-            //options.setBinary("/usr/bin/chromium-browser");
+            options.addArguments("start-maximized");
+//            options.addArguments("disable-infobars");
+//            options.addArguments("--disable-extensions");
+//            options.addArguments("--disable-gpu");
+//            options.addArguments("--disable-dev-shm-usage");
+//            options.addArguments("--no-sandbox");
             driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             wait = new WebDriverWait(driver,2);
