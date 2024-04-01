@@ -57,6 +57,40 @@
                     <argLine>-Dwebdriver.chrome.args=--headless</argLine>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <executions>
+                    <execution>
+                        <id>run-smoke-tests</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <includes>
+                                <include>**/SmokeTestRunner.java</include> <!-- Include smoke test classes -->
+                            </includes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>run-other-tests</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <includes>
+                                <include>**/UITestRunner.java</include> <!-- Include smoke test classes -->
+                            </includes>
+                            <excludes>
+                                <exclude>**/SmokeTestRunner.java</exclude> <!-- Exclude smoke test classes -->
+                            </excludes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
