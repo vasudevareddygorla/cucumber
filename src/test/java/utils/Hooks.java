@@ -32,7 +32,6 @@ public class Hooks {
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
             options.addArguments("--no-sandbox"); // Bypass OS security model
             driver = new ChromeDriver(options);
-//            driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             wait = new WebDriverWait(driver,2);
     }
