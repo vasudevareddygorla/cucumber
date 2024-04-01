@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
         features = "src/test/resources/features",
         glue = {"stepdefinitions", "utils"},
         tags = "@clip_master_login",
-        plugin = {"pretty", "html:target/cucumber-reports/clip-master-test-report.html"}
+        plugin = {"pretty", "html:target/cucumber", "json:target/clip-master-tests.json"}
 )
 public class ClipMasterTestRunner {
 }

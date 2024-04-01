@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
         features = "src/test/resources/features",
         glue = {"stepdefinitions", "utils"},
         tags = "@smoke",
-        plugin = {"pretty", "html:target/cucumber-reports/smoke-test-report.html"}
+        plugin = {"pretty", "html:target/cucumber", "json:target/smoke-tests.json"}
 )
 public class SmokeTestRunner {
 }
