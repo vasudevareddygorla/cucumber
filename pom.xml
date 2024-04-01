@@ -51,9 +51,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version> <!-- Or the latest version -->
                 <configuration>
-                    <includes>
-                        <include>**/UITestRunner.java</include>
-                    </includes>
+<!--                    <includes>-->
+<!--                        <include>**/UITestRunner.java</include>-->
+<!--                    </includes>-->
                     <argLine>-Dwebdriver.chrome.args=--headless</argLine>
                 </configuration>
             </plugin>
