@@ -49,7 +49,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version> <!-- Or the latest version -->
+                <version>3.2.5</version>
                 <configuration>
 <!--                    <includes>-->
 <!--                        <include>**/UITestRunner.java</include>-->
@@ -70,7 +70,7 @@
                         </goals>
                         <configuration>
                             <includes>
-                                <include>**/SmokeTestRunner.java</include> <!-- Include smoke test classes -->
+                                <include>**/SmokeTestRunner.java</include>
                             </includes>
                         </configuration>
                     </execution>
@@ -82,10 +82,10 @@
                         </goals>
                         <configuration>
                             <includes>
-                                <include>**/UITestRunner.java</include> <!-- Include smoke test classes -->
+                                <include>**/RegressionTestRunner.java</include>
                             </includes>
                             <excludes>
-                                <exclude>**/SmokeTestRunner.java</exclude> <!-- Exclude smoke test classes -->
+                                <exclude>**/SmokeTestRunner.java</exclude>
                             </excludes>
                         </configuration>
                     </execution>
