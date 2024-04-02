@@ -39,7 +39,8 @@ public class CommonFunctionality {
         List<String> paragraphText = new ArrayList<>();
         Set<String> duplicateText = new HashSet<>();
             for (WebElement paragraph : listingElements) {
-                if((paragraph.getText().contains("Article may contain the following mentions")) || (paragraph.getText().contains("Syndicated By"))) {
+                //(paragraph.getText().contains("Article may contain the following mentions")) ||
+                if((paragraph.getText().contains("Syndicated By"))) {
 
                 }else{
                     if(!paragraphText.contains(paragraph.getText())){
@@ -51,8 +52,9 @@ public class CommonFunctionality {
 
             }
         if (duplicateText.size()>0) {
+            System.out.println("Duplicate Snippets:");
             for (String text : duplicateText) {
-                System.out.println("Duplicate listing: "+text);
+                System.out.println(text);
             }
             return true;
         }else {
