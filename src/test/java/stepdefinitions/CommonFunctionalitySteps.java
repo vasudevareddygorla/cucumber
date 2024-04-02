@@ -21,9 +21,13 @@ public class CommonFunctionalitySteps {
         Assert.assertEquals("Verify the page contains the correct heading", expectedHeadingText, commonFunctionality.getPageTitle());
     }
 
-    @When("I wait until the loading indicator disappears$")
+    @When("^I wait until the loading indicator disappears$")
     public void waitForLoadingIndicatorToDisappear() {
         commonFunctionality.waitForLoadingToComplete();
     }
 
+    @Then("^I should see duplicate paragraphs within each listing:(true|false)$")
+    public void isDuplicateListingPresent(boolean status) {
+        Assert.assertEquals("Verify there is no duplicate listing present ", status, commonFunctionality.isDuplicateListingPresent());
+    }
 }

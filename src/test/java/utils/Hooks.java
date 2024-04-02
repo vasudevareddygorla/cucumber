@@ -24,16 +24,11 @@ public class Hooks {
     public void initializingBrowser(){
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
+//            options.addArguments("--headless");
             options.addArguments("start-maximized");
-//            options.addArguments("disable-infobars");
-//            options.addArguments("--disable-extensions");
-//            options.addArguments("--disable-gpu");
-//            options.addArguments("--disable-dev-shm-usage");
-//            options.addArguments("--no-sandbox");
             driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-            wait = new WebDriverWait(driver,2);
+            wait = new WebDriverWait(driver,60);
     }
 
     @Before("@app_master_login")
